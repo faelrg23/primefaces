@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Calculadora</title>
+    </h:head>
+    <h:body style="background-color: #ececec">
+        <h:form>
+            <p:panel header="Calculadora" style="width: 230px; margin: 0 auto">
+            <h:panelGrid columns="1">
+                <p:inputText value="#{ctl.visor}" style="font-size: 20px; text-align: right" size="14"/>
+                <h:panelGrid columns="4" style="width: 100%">
+                    <p:commandButton value="7" action="#{ctl.bt7(ae)}" update="@form"/>
+                    <p:commandButton value="8" action="#{ctl.bt8(ae)}" update="@form"/>
+                    <p:commandButton value="9"/>
+                    <p:commandButton value="+" action="#{ctl.btSoma(ae)}" update="@form" styleClass="ui-button-warning"/>
+                </h:panelGrid>
+                 <h:panelGrid columns="4" style="width: 100%">
+                    <p:commandButton value="4"/>
+                    <p:commandButton value="5"/>
+                    <p:commandButton value="6"/>
+                    <p:commandButton value="-" styleClass="ui-button-warning" />
+                </h:panelGrid>
+                 <h:panelGrid columns="4" style="width: 100%">
+                    <p:commandButton value="1"/>
+                    <p:commandButton value="2"/>
+                    <p:commandButton value="3"/>
+                    <p:commandButton value="*" styleClass="ui-button-warning" />
+                </h:panelGrid>
+                 <h:panelGrid columns="4" style="width: 100%">
+                     <p:commandButton value="C" action="#{ctl.btC(ae)}" update="@form" styleClass="ui-button-danger"/>
+                    <p:commandButton value="0"/>
+                    <p:commandButton value="=" action="#{ctl.btIgual(ae)}" update="@form" styleClass="ui-button-success"/>
+                    <p:commandButton value="/" styleClass="ui-button-warning" />
+                </h:panelGrid>
+            </h:panelGrid> 
+        </p:panel>
+        </h:form>     
+    </h:body>
+</html>
